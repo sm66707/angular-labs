@@ -1,0 +1,22 @@
+<p>
+    student component works from html file
+</p>
+<!-- <h1>
+    {{myfun()+3}}
+</h1> -->
+<img [alt]="stdName" [src]="stdImg">
+<div [innerText]="stdName"></div>
+<table border="2">
+    <tr>
+        <th>ID</th>
+       <th>NAME</th>
+    </tr>
+    <tr>
+        <td colSpan="x">Ali</td>
+    </tr>
+
+</table>
+<button (click)="myfun(t1.value)">show</button>
+<input [(ngModel)]="stdName" type="text">
+<input type="text" [value]="stdName" #t2 (keyup)="stdName=t2.value">
+<input #t1 type="text" (blur)="updateName(t1.value)" (keyup.enter)="updateName(t1.value)">

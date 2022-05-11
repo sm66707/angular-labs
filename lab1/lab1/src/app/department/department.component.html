@@ -1,0 +1,45 @@
+<p>department works!</p>
+<!-- <div>
+    {{dept.id}}:{{dept.name}}:{{dept.capacity}}
+</div> -->
+<!-- <div>
+    {{ndept.id}}:{{ndept.name}}:{{ndept.capacity}}
+</div> -->
+<input type="text" [(ngModel)]="ndept.id">
+<input type="text" [(ngModel)]="ndept.name">
+<input type="text" [(ngModel)]="ndept.capacity">
+<button (click)="Add()">Add</button>
+<div *ngIf="department.name!='hidden0000'">
+    ID:
+    <input type=" text " [(ngModel)]="department.id"> Department Name:
+    <input type="text " [(ngModel)]="department.name"> capacity
+    <input type="text " [(ngModel)]="department.capacity">
+</div>
+<table class="table table-bordered table-hover stripped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Id</th>
+            <th>name</th>
+            <th>capacity</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of depts;let ser=index;let f=even">
+        <td>{{ser}}{{f}}</td>
+        <td> {{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.capacity}}</td>
+        <td><button (click)="edit(item.id)" class="btn btn-info">edit</button>
+        <button (click)="delete(item.id)" class="btn btn-danger">delete</button>
+        <button (click)="show(item.id)">view</button></td>
+        
+    </tr>
+</tbody>
+</table>
+<div style="background-color: yellow;" *ngIf="showflag==true">
+    ID: {{dept.id}}
+    <br /> Department Name: {{dept.name}}
+    <br /> capacity: {{dept.capacity}}
+</div>
+<!-- <input [(ngModel)]="dept.capacity" type="text"> -->
